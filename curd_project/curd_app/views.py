@@ -34,5 +34,18 @@ def delete(request,id):
     return redirect('home')
 
 
-def update(request):
-    return render(request,'curd_app/update.html')
+def update(request,pk):
+    stu = Student.objects.get(id=pk)
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        roll = request.POST.get('roll')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        Student.name = name 
+        Student.roll = roll 
+        Student.email = email 
+        Student.password = password
+        stu.save()
+        return redirect("home")
+    content = {"stu_data": stu}
+    return render(request, "update.html", context=content)
