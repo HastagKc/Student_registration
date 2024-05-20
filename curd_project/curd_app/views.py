@@ -32,3 +32,7 @@ def delete(request,id):
     std_data.delete()
     messages.success(request, 'Deleted Successfully')
     return redirect('home')
+
+
+def update(request):
+    return render(request,'curd_app/update.html')

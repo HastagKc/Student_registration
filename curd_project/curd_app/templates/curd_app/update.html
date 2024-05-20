@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+
+    <!-- css links  -->
+    <link rel="stylesheet" href="{% static 'curd_app/css/style.css'%}">
+
+
+</head>
+
+<body>
+    <div class="continer">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="name" class="form-label">name</label>
+                <input type="text" class="form-control" name="name" />
+            </div>
+            <div class="mb-3">
+                <label for="roll" class="form-label">roll no</label>
+                <input type="text" class="form-control" name="roll" />
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" name="email" autocomplete="none" />
+            </div>
+            <div class="mb-3">
+                <label for="pass" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" autocomplete="none" />
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
