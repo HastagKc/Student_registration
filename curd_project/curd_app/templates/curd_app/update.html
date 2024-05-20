@@ -24,19 +24,21 @@
                     {% csrf_token %}
                     <div class="mb-3">
                         <label for="name" class="form-label">name</label>
-                        <input type="text" class="form-control" name="name" value="{{}}" />
+                        <input type="text" class="form-control" name="name" value="{{stu_data.name}}" />
                     </div>
                     <div class="mb-3">
                         <label for="roll" class="form-label">roll no</label>
-                        <input type="text" class="form-control" name="roll" />
+                        <input type="text" class="form-control" name="roll" value="{{stu_data.roll}}" />
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" name="email" autocomplete="none" />
+                        <input type="email" class="form-control" name="email" autocomplete="none"
+                            value="{{stu_data.email}}" />
                     </div>
                     <div class="mb-3">
                         <label for="pass" class="form-label">Password</label>
-                        <input type="password" class="form-control" name="password" autocomplete="none" />
+                        <input type="password" class="form-control" name="password" autocomplete="none"
+                            value="{{stu_data.password}}" />
                     </div>
                     <button type="submit" class="btn btn-success">Update</button>
                 </form>

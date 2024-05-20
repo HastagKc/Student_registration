@@ -41,11 +41,13 @@ def update(request,pk):
         roll = request.POST.get('roll')
         email = request.POST.get('email')
         password = request.POST.get('password')
-        Student.name = name 
-        Student.roll = roll 
-        Student.email = email 
-        Student.password = password
+        stu.name = name 
+        stu.roll = roll 
+        stu.email = email 
+        stu.password = password
         stu.save()
         return redirect("home")
     content = {"stu_data": stu}
-    return render(request, "update.html", context=content)
+    return render(request, "curd_app/update.html", context=content)
+
+
